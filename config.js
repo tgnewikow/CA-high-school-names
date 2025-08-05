@@ -87,10 +87,38 @@ var config = {
             hidden: false,
             title: 'Only about 17 percent of schools are named after a <span style="color:#8f4bb4;">person</span>.',
             image: './assets/jfk-drawing.png',
-            //description: '',
             location: {
                 center: [-123.45156, 37.95943],
                 zoom: 4.78,
+                pitch: 0,
+                bearing: 0
+            },
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            callback: '',
+            onChapterEnter: [
+                {
+                     layer: 'Person names',
+                     opacity: 1,
+                     duration: 500
+                }
+            ],
+            onChapterExit: [
+                {
+                     layer: 'Person names',
+                     opacity: 0,
+                     duration: 500
+                }
+            ]
+        },
+        {
+            id: 'person-names-sf',
+            alignment: 'left',
+            hidden: false,
+            title: 'In San Fransisco County, 90 percent of schools are named after a <span style="color:#8f4bb4;">person</span>.',
+            location: {
+                center: [-122.47754, 37.76058],
+                zoom: 11.21,
                 pitch: 0,
                 bearing: 0
             },
@@ -147,7 +175,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'Almost one-fourth of schools have <span style="color:#b45b4b;">Spanish</span> names.',
-            //description: '',
+            image: './assets/bella-vista-art.png',
             location: {
                 center: [-123.45156, 37.95943],
                 zoom: 4.78,
