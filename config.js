@@ -16,7 +16,7 @@ var config = {
     auto: false,
     title: 'How are California high schools named?',
     subtitle: 'Some common themes arise for schools in the Golden State.',
-    byline: 'By Tara Gnewikow',
+    byline: 'By <a href="https://github.com/tgnewikow" target="_blank">Tara Gnewikow</a>',
     footer: 'Source: California Department of Education <br> You can find the <a href="https://github.com/tgnewikow/CA-high-school-names" target="_blank">GitHub repository for this analysis here</a>.',
     chapters: [
         {
@@ -39,6 +39,11 @@ var config = {
                 {
                      layer: 'All schools',
                      opacity: 1,
+                     duration: 500
+                },
+                {
+                     layer: 'Person names',
+                     opacity: 0,
                      duration: 500
                 }
             ],
@@ -103,19 +108,14 @@ var config = {
                      duration: 500
                 }
             ],
-            onChapterExit: [
-                {
-                     layer: 'Person names',
-                     opacity: 0,
-                     duration: 500
-                }
-            ]
+            onChapterExit: []
         },
         {
             id: 'person-names-sf',
             alignment: 'left',
             hidden: false,
-            title: 'In San Fransisco County, 90 percent of schools are named after a <span style="color:#8f4bb4;">person</span>.',
+            title: 'In San Fransisco County, 90 percent of schools are named after a <span style="color:#8f4bb4;">person</span>. <br> <br>Among the people schools were named after, politician was the most common occupation.',
+            image: './assets/person-chart-drawn.png',
             location: {
                 center: [-122.47754, 37.76058],
                 zoom: 11.21,
@@ -132,13 +132,7 @@ var config = {
                      duration: 500
                 }
             ],
-            onChapterExit: [
-                {
-                     layer: 'Person names',
-                     opacity: 0,
-                     duration: 500
-                }
-            ]
+            onChapterExit: []
         },
         {
             id: 'other-names',
@@ -156,6 +150,16 @@ var config = {
             rotateAnimation: false,
             callback: '',
             onChapterEnter: [
+                {
+                     layer: 'Person names',
+                     opacity: 0,
+                     duration: 500
+                },
+                {
+                     layer: 'Spanish names',
+                     opacity: 0,
+                     duration: 500
+                },
                 {
                      layer: 'Other names',
                      opacity: 1,
@@ -192,13 +196,7 @@ var config = {
                      duration: 500
                 }
             ],
-            onChapterExit: [
-                {
-                     layer: 'Spanish names',
-                     opacity: 0,
-                     duration: 500
-                }
-            ]
+            onChapterExit: []
         },
         {
             id: 'spanish-names-la',
@@ -222,13 +220,7 @@ var config = {
                      duration: 500
                 }
             ],
-            onChapterExit: [
-                {
-                     layer: 'Spanish names',
-                     opacity: 1,
-                     duration: 500
-                }
-            ]
+            onChapterExit: []
         }
     ]
 };
